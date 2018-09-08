@@ -1,22 +1,11 @@
 [gd_scene load_steps=4 format=2]
 
-[sub_resource type="PlaneShape" id=1]
-
-plane = Plane( 0, 1, 0, 0 )
-
-[sub_resource type="PlaneMesh" id=2]
-
-custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
-size = Vector2( 2, 2 )
-subdivide_width = 0
-subdivide_depth = 0
-
-[sub_resource type="SpatialMaterial" id=3]
+[sub_resource type="SpatialMaterial" id=1]
 
 render_priority = 0
 flags_transparent = false
 flags_unshaded = false
-flags_vertex_lighting = true
+flags_vertex_lighting = false
 flags_no_depth_test = false
 flags_use_point_size = false
 flags_world_triplanar = false
@@ -34,11 +23,11 @@ params_point_size = 1.0
 params_billboard_mode = 0
 params_grow = false
 params_use_alpha_scissor = false
-albedo_color = Color( 0.14457, 0.539062, 0.0758057, 1 )
-metallic = 0.16
-metallic_specular = 0.5
+albedo_color = Color( 1, 1, 1, 1 )
+metallic = 1.0
+metallic_specular = 1.0
 metallic_texture_channel = 0
-roughness = 0.65
+roughness = 0.5
 roughness_texture_channel = 0
 emission_enabled = false
 normal_enabled = false
@@ -61,18 +50,30 @@ uv2_triplanar = false
 uv2_triplanar_sharpness = 1.0
 proximity_fade_enable = false
 distance_fade_enable = false
-_sections_unfolded = [ "Albedo", "Flags", "Metallic", "Parameters", "Roughness", "Vertex Color" ]
+_sections_unfolded = [ "Emission", "Metallic", "Roughness" ]
 
-[node name="Plane" type="RigidBody"]
+[sub_resource type="CubeMesh" id=2]
+
+custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
+size = Vector3( 2, 2, 2 )
+subdivide_width = 0
+subdivide_height = 0
+subdivide_depth = 0
+
+[sub_resource type="BoxShape" id=3]
+
+extents = Vector3( 1, 1, 1 )
+
+[node name="MetalCylinder" type="RigidBody"]
 
 input_ray_pickable = true
 input_capture_on_drag = false
 collision_layer = 1
 collision_mask = 1
-mode = 1
+mode = 0
 mass = 1.0
 friction = 1.0
-bounce = 0.04
+bounce = 0.0
 gravity_scale = 1.0
 custom_integrator = false
 continuous_cd = false
@@ -90,20 +91,13 @@ linear_velocity = Vector3( 0, 0, 0 )
 linear_damp = -1.0
 angular_velocity = Vector3( 0, 0, 0 )
 angular_damp = -1.0
-_sections_unfolded = [ "Collision", "Transform" ]
-
-[node name="CollisionShape" type="CollisionShape" parent="." index="0"]
-
-transform = Transform( 100, 0, 0, 0, 1, 0, 0, 0, 100, 0, 0, 0 )
-shape = SubResource( 1 )
-disabled = false
 _sections_unfolded = [ "Transform" ]
 
-[node name="MeshInstance" type="MeshInstance" parent="." index="1"]
+[node name="MeshInstance" type="MeshInstance" parent="." index="0"]
 
-transform = Transform( 100, 0, 0, 0, 1, 0, 0, 0, 100, 0, 0, 0 )
+transform = Transform( 5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0 )
 layers = 1
-material_override = null
+material_override = SubResource( 1 )
 cast_shadow = 1
 extra_cull_margin = 0.0
 use_in_baked_light = false
@@ -113,7 +107,14 @@ lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
 mesh = SubResource( 2 )
 skeleton = NodePath("..")
-material/0 = SubResource( 3 )
-_sections_unfolded = [ "Geometry", "Transform", "material" ]
+material/0 = null
+_sections_unfolded = [ "Geometry", "Transform" ]
+
+[node name="CollisionShape" type="CollisionShape" parent="." index="1"]
+
+transform = Transform( 5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0 )
+shape = SubResource( 3 )
+disabled = false
+_sections_unfolded = [ "Transform" ]
 
 

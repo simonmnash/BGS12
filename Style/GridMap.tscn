@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Boxes/Metal.tscn" type="PackedScene" id=1]
+
+
+
+[node name="GridMap" type="GridMap" index="0"]
+
+theme = null
+cell_size = Vector3( 2, 2, 2 )
+cell_octant_size = 8
+cell_center_x = true
+cell_center_y = true
+cell_center_z = true
+cell_scale = 1.0
+collision_layer = 1
+collision_mask = 1
+data = {
+"cells": PoolIntArray(  )
+}
+__meta__ = {
+"_editor_clip_": 0
+}
+
+[node name="MetalBox" parent="." index="0" instance=ExtResource( 1 )]
+
+
