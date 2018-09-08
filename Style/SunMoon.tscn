@@ -109,7 +109,7 @@ _sections_unfolded = [ "Light", "Omni" ]
 [node name="DirectionalLight2" type="DirectionalLight" parent="." index="4"]
 
 layers = 1
-light_color = Color( 0.149089, 0.628906, 0.01474, 1 )
+light_color = Color( 0.808716, 0.976562, 0, 1 )
 light_energy = 2.09
 light_indirect_energy = 1.53
 light_negative = false
