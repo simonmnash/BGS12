@@ -1,0 +1,136 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="SphereShape" id=1]
+
+radius = 1.0
+
+[sub_resource type="SphereMesh" id=2]
+
+custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
+radius = 1.0
+height = 2.0
+radial_segments = 64
+rings = 32
+is_hemisphere = false
+
+[node name="SunMoon" type="RigidBody"]
+
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+mode = 0
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = false
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+axis_lock_linear_x = false
+axis_lock_linear_y = false
+axis_lock_linear_z = false
+axis_lock_angular_x = false
+axis_lock_angular_y = false
+axis_lock_angular_z = false
+linear_velocity = Vector3( 0, 0, 0 )
+linear_damp = -1.0
+angular_velocity = Vector3( 0, 0, 0 )
+angular_damp = -1.0
+
+[node name="CollisionShape" type="CollisionShape" parent="." index="0"]
+
+shape = SubResource( 1 )
+disabled = false
+
+[node name="MeshInstance" type="MeshInstance" parent="." index="1"]
+
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 2 )
+skeleton = NodePath("..")
+material/0 = null
+
+[node name="DirectionalLight" type="SpotLight" parent="." index="2"]
+
+transform = Transform( 1, 0, 0, 0, -0.95792, 0.287036, 0, -0.287036, -0.95792, 0, 0, 0 )
+layers = 1
+light_color = Color( 0.808594, 0.344284, 0.344284, 1 )
+light_energy = 16.0
+light_indirect_energy = 15.98
+light_negative = false
+light_specular = 0.34
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+spot_range = 10000.0
+spot_attenuation = 24.2514
+spot_angle = 45.0
+spot_angle_attenuation = 1.0
+_sections_unfolded = [ "Light", "Spot" ]
+
+[node name="OmniLight" type="OmniLight" parent="." index="3"]
+
+layers = 1
+light_color = Color( 0.392944, 0.553597, 0.90625, 1 )
+light_energy = 16.0
+light_indirect_energy = 16.0
+light_negative = false
+light_specular = 0.5
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 36700.2
+omni_attenuation = 13.4543
+omni_shadow_mode = 1
+omni_shadow_detail = 1
+_sections_unfolded = [ "Light", "Omni" ]
+
+[node name="DirectionalLight2" type="DirectionalLight" parent="." index="4"]
+
+layers = 1
+light_color = Color( 0.149089, 0.628906, 0.01474, 1 )
+light_energy = 11.26
+light_indirect_energy = 13.69
+light_negative = false
+light_specular = 0.5
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.1
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+directional_shadow_mode = 2
+directional_shadow_split_1 = 0.1
+directional_shadow_split_2 = 0.2
+directional_shadow_split_3 = 0.5
+directional_shadow_blend_splits = false
+directional_shadow_normal_bias = 0.8
+directional_shadow_bias_split_scale = 0.25
+directional_shadow_depth_range = 0
+directional_shadow_max_distance = 200.0
+_sections_unfolded = [ "Directional Shadow", "Light" ]
+
+
