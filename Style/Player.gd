@@ -34,7 +34,7 @@ func process_input(delta):
 	var input_movement_vector = Vector2()
 	if Input.is_action_pressed("movement_forward"):
 		input_movement_vector.y += 1
-	if Input.is_action_pressed("movement_back"):
+	if Input.is_action_pressed("movement_backward"):
 		input_movement_vector.y -= 1
 	if Input.is_action_pressed("movement_left"):
 		input_movement_vector.x -= 1

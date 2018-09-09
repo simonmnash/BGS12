@@ -1,9 +1,9 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://Boxes/Fire.tscn" type="PackedScene" id=2]
 [ext_resource path="res://white.png" type="Texture" id=3]
-[ext_resource path="res://Shader.gdns" type="Script" id=4]
+[ext_resource path="res://Pixel1.gd" type="Script" id=4]
 
 [sub_resource type="CapsuleShape" id=1]
 
@@ -14,12 +14,16 @@ height = 9.0
 
 extents = Vector3( 0.8, 0.2, 0.8 )
 
+[sub_resource type="GDScript" id=5]
+
+script/source = ""
+
 [sub_resource type="Shader" id=3]
 
 code = "shader_type canvas_item;
 
-uniform float size_x=0.008;
-uniform float size_y=0.008;
+uniform float size_x;
+uniform float size_y;
 
 void fragment() {
 	vec2 uv = SCREEN_UV;
@@ -28,6 +32,8 @@ void fragment() {
 	COLOR.rgb= textureLod(SCREEN_TEXTURE,uv,0.0).rgb;
 }
 "
+script = SubResource( 5 )
+_sections_unfolded = [ "Resource" ]
 
 [sub_resource type="ShaderMaterial" id=4]
 
@@ -99,7 +105,6 @@ transform = Transform( 1, 0, 0, 0, 0.114436, -0.993431, 0, 0.993431, 0.114436, 0
 
 [node name="HUD" type="Control" parent="." index="3"]
 
-visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -113,17 +118,19 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 
-[node name="Shader" type="TextureRect" parent="HUD" index="0"]
+[node name="shader" type="TextureRect" parent="HUD" index="0" groups=[
+"shader",
+]]
 
 material = SubResource( 4 )
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 3.0
-margin_top = 2.0
-margin_right = 1021.0
-margin_bottom = 603.0
+margin_left = -1307.0
+margin_top = -945.0
+margin_right = 2460.0
+margin_bottom = 1413.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
