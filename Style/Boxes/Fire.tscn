@@ -9,7 +9,9 @@
 
 extents = Vector3( 1, 1, 1 )
 
-[node name="Fire" type="Spatial"]
+[node name="Fire" type="Spatial" groups=[
+"fires",
+]]
 
 script = ExtResource( 1 )
 

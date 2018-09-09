@@ -9,16 +9,25 @@ func _ready():
 	# Initialization here
 	pass
 
-#func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
-
 
 func _on_FireRadius_area_shape_entered(area_id, area, area_shape, self_shape):
-	print(area.get_parent().get_parent().name)
 	if area.get_parent().get_parent().name == "FireSource":
-		var scene_instance = fire_scene.instance()
-		self.add_child(scene_instance)
+		var scene_instance = fire_scene.instance();
+		self.add_child(scene_instance);
 
 
+
+
+func _on_Timer_timeout():
+	var children = self.get_children();
+	var fire_count = 0;
+	for child in children:
+		if child.is_in_group("fires"):
+			fire_count += 1;
+	print(fire_count);
+	if fire_count > 4:
+		self.queue_free()
+	elif fire_count > 0:
+		var scene_instance = fire_scene.instance();
+		self.add_child(scene_instance);
+	
