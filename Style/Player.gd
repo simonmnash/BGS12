@@ -2,9 +2,9 @@ extends KinematicBody
 
 #const GRAVITY = -24.8
 var vel = Vector3()
-const MAX_SPEED = 20
+const MAX_SPEED = 100
 const JUMP_SPEED = 18
-const ACCEL= 4.5
+const ACCEL= 1
 
 var dir = Vector3()
 
@@ -33,13 +33,13 @@ func process_input(delta):
 	var cam_xform = camera.get_global_transform()
 	var input_movement_vector = Vector2()
 	if Input.is_action_pressed("movement_forward"):
-		input_movement_vector.y += 10
-	if Input.is_action_pressed("movement_backward"):
-		input_movement_vector.y -= 10
+		input_movement_vector.y += 1
+	if Input.is_action_pressed("movement_back"):
+		input_movement_vector.y -= 1
 	if Input.is_action_pressed("movement_left"):
-		input_movement_vector.x -= 10
+		input_movement_vector.x -= 1
 	if Input.is_action_pressed("movement_right"):
-		input_movement_vector.x += 10
+		input_movement_vector.x += 1
 
 	input_movement_vector = input_movement_vector.normalized()
 	
@@ -61,7 +61,10 @@ func process_input(delta):
 		else:
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	# ----------------------------------
-
+	
+	if Input.is_action_just_pressed("flamethrower"):
+		print("fire")
+		# ----------------------------------
 func process_movement(delta):
 	dir.y = 0
 	dir = dir.normalized()

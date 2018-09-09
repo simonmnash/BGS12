@@ -1,6 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
-[sub_resource type="SpatialMaterial" id=15]
+[ext_resource path="res://Boxes/GreenBox.gd" type="Script" id=1]
+
+[sub_resource type="SpatialMaterial" id=1]
 
 render_priority = 0
 flags_transparent = false
@@ -52,16 +54,16 @@ proximity_fade_enable = false
 distance_fade_enable = false
 _sections_unfolded = [ "Albedo" ]
 
-[sub_resource type="CubeMesh" id=16]
+[sub_resource type="CubeMesh" id=2]
 
-material = SubResource( 15 )
+material = SubResource( 1 )
 custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
 size = Vector3( 2, 2, 2 )
 subdivide_width = 0
 subdivide_height = 0
 subdivide_depth = 0
 
-[sub_resource type="SpatialMaterial" id=17]
+[sub_resource type="SpatialMaterial" id=3]
 
 render_priority = 0
 flags_transparent = false
@@ -113,7 +115,7 @@ proximity_fade_enable = false
 distance_fade_enable = false
 _sections_unfolded = [ "Roughness" ]
 
-[sub_resource type="BoxShape" id=14]
+[sub_resource type="BoxShape" id=25]
 
 extents = Vector3( 1, 1, 1 )
 
@@ -128,9 +130,10 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = SubResource( 16 )
+mesh = SubResource( 2 )
 skeleton = NodePath("..")
-material/0 = SubResource( 17 )
+material/0 = SubResource( 3 )
+script = ExtResource( 1 )
 _sections_unfolded = [ "material" ]
 
 [node name="StaticBody" type="StaticBody" parent="." index="0"]
@@ -146,7 +149,9 @@ constant_angular_velocity = Vector3( 0, 0, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="StaticBody" index="0"]
 
-shape = SubResource( 14 )
+shape = SubResource( 25 )
 disabled = false
+
+[connection signal="input_event" from="StaticBody" to="." method="_on_StaticBody_input_event"]
 
 

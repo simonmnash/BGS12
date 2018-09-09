@@ -8,7 +8,7 @@
 [ext_resource path="res://Boxes/WoodBox.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Boxes/StoneBox.tscn" type="PackedScene" id=7]
 
-[sub_resource type="SpatialMaterial" id=4]
+[sub_resource type="SpatialMaterial" id=1]
 
 render_priority = 0
 flags_transparent = false
@@ -60,16 +60,16 @@ proximity_fade_enable = false
 distance_fade_enable = false
 _sections_unfolded = [ "Metallic" ]
 
-[sub_resource type="CubeMesh" id=1]
+[sub_resource type="CubeMesh" id=2]
 
-material = SubResource( 4 )
+material = SubResource( 1 )
 custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
 size = Vector3( 2, 2, 2 )
 subdivide_width = 0
 subdivide_height = 0
 subdivide_depth = 0
 
-[sub_resource type="SpatialMaterial" id=19]
+[sub_resource type="SpatialMaterial" id=3]
 
 render_priority = 0
 flags_transparent = false
@@ -121,7 +121,7 @@ proximity_fade_enable = false
 distance_fade_enable = false
 _sections_unfolded = [ "Albedo", "Metallic" ]
 
-[sub_resource type="SpatialMaterial" id=12]
+[sub_resource type="SpatialMaterial" id=4]
 
 render_priority = 0
 flags_transparent = false
@@ -173,16 +173,16 @@ proximity_fade_enable = false
 distance_fade_enable = false
 _sections_unfolded = [ "Albedo" ]
 
-[sub_resource type="CubeMesh" id=10]
+[sub_resource type="CubeMesh" id=5]
 
-material = SubResource( 12 )
+material = SubResource( 4 )
 custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
 size = Vector3( 2, 2, 2 )
 subdivide_width = 0
 subdivide_height = 0
 subdivide_depth = 0
 
-[sub_resource type="SpatialMaterial" id=20]
+[sub_resource type="SpatialMaterial" id=6]
 
 render_priority = 0
 flags_transparent = false
@@ -234,7 +234,7 @@ proximity_fade_enable = false
 distance_fade_enable = false
 _sections_unfolded = [ "Albedo" ]
 
-[sub_resource type="SpatialMaterial" id=15]
+[sub_resource type="SpatialMaterial" id=7]
 
 render_priority = 0
 flags_transparent = false
@@ -286,16 +286,16 @@ proximity_fade_enable = false
 distance_fade_enable = false
 _sections_unfolded = [ "Albedo" ]
 
-[sub_resource type="CubeMesh" id=5]
+[sub_resource type="CubeMesh" id=8]
 
-material = SubResource( 15 )
+material = SubResource( 7 )
 custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
 size = Vector3( 2, 2, 2 )
 subdivide_width = 0
 subdivide_height = 0
 subdivide_depth = 0
 
-[sub_resource type="SpatialMaterial" id=21]
+[sub_resource type="SpatialMaterial" id=9]
 
 render_priority = 0
 flags_transparent = false
@@ -346,7 +346,7 @@ uv2_triplanar_sharpness = 1.0
 proximity_fade_enable = false
 distance_fade_enable = false
 
-[sub_resource type="SpatialMaterial" id=18]
+[sub_resource type="SpatialMaterial" id=10]
 
 render_priority = 0
 flags_transparent = false
@@ -398,16 +398,16 @@ proximity_fade_enable = false
 distance_fade_enable = false
 _sections_unfolded = [ "Albedo", "Metallic" ]
 
-[sub_resource type="CubeMesh" id=7]
+[sub_resource type="CubeMesh" id=11]
 
-material = SubResource( 18 )
+material = SubResource( 10 )
 custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
 size = Vector3( 2, 2, 2 )
 subdivide_width = 0
 subdivide_height = 0
 subdivide_depth = 0
 
-[sub_resource type="SpatialMaterial" id=22]
+[sub_resource type="SpatialMaterial" id=12]
 
 render_priority = 0
 flags_transparent = false
@@ -459,7 +459,7 @@ proximity_fade_enable = false
 distance_fade_enable = false
 _sections_unfolded = [ "Albedo" ]
 
-[sub_resource type="SpatialMaterial" id=23]
+[sub_resource type="SpatialMaterial" id=13]
 
 render_priority = 0
 flags_transparent = false
@@ -511,16 +511,16 @@ proximity_fade_enable = false
 distance_fade_enable = false
 _sections_unfolded = [ "Albedo", "Roughness" ]
 
-[sub_resource type="CubeMesh" id=24]
+[sub_resource type="CubeMesh" id=14]
 
-material = SubResource( 23 )
+material = SubResource( 13 )
 custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
 size = Vector3( 2, 2, 2 )
 subdivide_width = 0
 subdivide_height = 0
 subdivide_depth = 0
 
-[sub_resource type="SpatialMaterial" id=25]
+[sub_resource type="SpatialMaterial" id=15]
 
 render_priority = 0
 flags_transparent = false
@@ -572,9 +572,9 @@ proximity_fade_enable = false
 distance_fade_enable = false
 _sections_unfolded = [ "Albedo", "Roughness" ]
 
-[sub_resource type="CubeMesh" id=26]
+[sub_resource type="CubeMesh" id=16]
 
-material = SubResource( 25 )
+material = SubResource( 15 )
 custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
 size = Vector3( 2, 2, 2 )
 subdivide_width = 0
@@ -582,7 +582,7 @@ subdivide_height = 0
 subdivide_depth = 0
 _sections_unfolded = [ "Resource" ]
 
-[sub_resource type="SpatialMaterial" id=27]
+[sub_resource type="SpatialMaterial" id=17]
 
 render_priority = 0
 flags_transparent = false
@@ -634,9 +634,9 @@ proximity_fade_enable = false
 distance_fade_enable = false
 _sections_unfolded = [ "Albedo", "Roughness" ]
 
-[sub_resource type="CubeMesh" id=28]
+[sub_resource type="CubeMesh" id=18]
 
-material = SubResource( 27 )
+material = SubResource( 17 )
 custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
 size = Vector3( 2, 2, 2 )
 subdivide_width = 0
@@ -648,40 +648,40 @@ subdivide_depth = 0
 [node name="MetalBox" parent="." index="0" instance=ExtResource( 1 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.31349, -1.22807, -3.33115 )
-mesh = SubResource( 1 )
-material/0 = SubResource( 19 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
 
 [node name="BlueBox" parent="." index="1" instance=ExtResource( 2 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.47274, -2.3576, -5.92751 )
-mesh = SubResource( 10 )
-material/0 = SubResource( 20 )
+mesh = SubResource( 5 )
+material/0 = SubResource( 6 )
 
 [node name="GreenBox" parent="." index="2" instance=ExtResource( 3 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.998434, -5.48813, -3.08171 )
-mesh = SubResource( 5 )
-material/0 = SubResource( 21 )
+mesh = SubResource( 8 )
+material/0 = SubResource( 9 )
 
 [node name="RedBox" parent="." index="3" instance=ExtResource( 4 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.95923, -3.597, -0.255655 )
-mesh = SubResource( 7 )
-material/0 = SubResource( 22 )
+mesh = SubResource( 11 )
+material/0 = SubResource( 12 )
 
 [node name="SandBox" parent="." index="4" instance=ExtResource( 5 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.931215, -0.312724, -6.30476 )
-mesh = SubResource( 24 )
+mesh = SubResource( 14 )
 
 [node name="WoodBox" parent="." index="5" instance=ExtResource( 6 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.94129, -4.72036, -4.28524 )
-mesh = SubResource( 26 )
+mesh = SubResource( 16 )
 
 [node name="StoneBox" parent="." index="6" instance=ExtResource( 7 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.63959, -0.414656, 0.323151 )
-mesh = SubResource( 28 )
+mesh = SubResource( 18 )
 
 
