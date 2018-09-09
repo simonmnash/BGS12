@@ -12,6 +12,6 @@ func _ready():
 
 func increase_pixelation():
 	print("pixel")
-	pixelation *= 5.00;
+	pixelation += 0.004
 	self.material.set_shader_param("size_x", pixelation)
 	self.material.set_shader_param("size_y", pixelation)
