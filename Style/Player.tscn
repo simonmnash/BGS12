@@ -36,7 +36,7 @@ shader = SubResource( 3 )
 shader_param/size_x = null
 shader_param/size_y = null
 
-[node name="Player" type="KinematicBody" index="0"]
+[node name="Player" type="KinematicBody"]
 
 input_ray_pickable = true
 input_capture_on_drag = false
